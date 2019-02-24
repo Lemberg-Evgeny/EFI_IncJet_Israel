@@ -1,0 +1,706 @@
+﻿<Window x:Class="StatusBuilder.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StatusBuilder"
+        mc:Ignorable="d"
+        Title="STATUS Builder"  Width="950" ResizeMode="CanMinimize" Height="750" ScrollViewer.HorizontalScrollBarVisibility="Visible">
+
+    <Grid Margin="0,0,4,2">
+        <!--Canvas conteinir for print screen-->
+        <Canvas x:Name="CanvasPrint" Width="800" HorizontalAlignment="Right" Margin="0,0,105,0">
+            <Border BorderBrush="#FFD11919" BorderThickness="2" HorizontalAlignment="Left" Height="561" VerticalAlignment="Top" Width="733" Canvas.Left="-1" Canvas.Top="10"/>
+            <Label Content="PRINTER CONFIGURATIONS" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Width="692" Height="40" FontSize="18" FontWeight="Bold" TextOptions.TextFormattingMode="Display" Background="{x:Null}" Canvas.Top="8"/>
+            <TextBox Height="28" Text="Serial Number" Canvas.Top="40" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <!--Text box name save in filename pdf-->
+            <TextBox x:Name="textBoxNameFile" Height="23"  Canvas.Top="43" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Name" Canvas.Top="69" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Type" Canvas.Top="98" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="S/W front end" Canvas.Top="127" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Controller" Canvas.Top="156" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="PLC Block" Canvas.Top="185" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="PLC Machine" Canvas.Top="214" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Plug ID" Canvas.Top="243" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="S/N Computer" Canvas.Top="272" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Video card" Canvas.Top="359" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Tauro" Canvas.Top="388" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Maxwell" Canvas.Top="417" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="PCI fpga" Canvas.Top="476" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFB3E1F1"/>
+                        <GradientStop Color="#FFE3EEF1" Offset="0.238"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="BCC ᶙc" Canvas.Top="505" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFB3E1F1"/>
+                        <GradientStop Color="#FFE3EEF1" Offset="0.238"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="BCC fpga" Canvas.Top="534" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFB3E1F1"/>
+                        <GradientStop Color="#FFE3EEF1" Offset="0.238"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <ComboBox Canvas.Left="180" Canvas.Top="71" Width="147" FontSize="18" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
+                <ComboBoxItem Content="Vutek" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Foreground="Black" Background="#00000000" />
+                <ComboBoxItem Content="Quantum" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Foreground="Black" Background="#00000000" />
+                <ComboBoxItem Content="Matan" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Foreground="Black" Background="#00000000"/>
+                <ComboBoxItem Content="Flex" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" Foreground="Black" Background="#00000000" />
+            </ComboBox>
+            <ComboBox Canvas.Left="180" Canvas.Top="100" Width="147" FontSize="18" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
+                <ComboBoxItem Content="4 Color" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="7 Color" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+            </ComboBox>
+            <CheckBox Content="W" Canvas.Left="118" Canvas.Top="105" FlowDirection="RightToLeft" FontWeight="Bold" ToolTip="Select if includet WHITE options"/>
+            <CheckBox Content="V" Canvas.Left="151" Canvas.Top="105" FlowDirection="LeftToRight" FontWeight="Bold" ToolTip="Select if includet VARNISH options"/>
+            <TextBox x:Name="box_Copy" Height="23"  Canvas.Top="130" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="9" HorizontalContentAlignment="Center" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy1" Height="23"  Canvas.Top="159" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy2" Height="23"  Canvas.Top="187" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy3" Height="23"  Canvas.Top="217" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy4" Height="23"  Canvas.Top="245" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="15" HorizontalContentAlignment="Center" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy5" Height="23"  Canvas.Top="275" Width="147" FontSize="17" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="15" HorizontalContentAlignment="Center" Text="MTN-">
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy6" Height="23"  Canvas.Top="362" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" Text="0x" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy7" Height="23"  Canvas.Top="391" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" Text="0x" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy8" Height="23"  Canvas.Top="420" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" Text="0x" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy10" Height="23"  Canvas.Top="479" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy11" Height="23"  Canvas.Top="508" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy12" Height="23"  Canvas.Top="537" Width="147" FontSize="16" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" HorizontalAlignment="Center" BorderThickness="1" VerticalAlignment="Top" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Cutter" Canvas.Top="40" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="692" Canvas.Top="48"/>
+            <TextBox Height="28" Text="Mist seal" Canvas.Top="40" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="338" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="506" Canvas.Top="48"/>
+            <TextBox Height="28" Text="" Canvas.Top="69" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Mist collector" Canvas.Top="69" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="338" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="506" Canvas.Top="77"/>
+            <TextBox Height="28" Text="Block out" Canvas.Top="98" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="692" Canvas.Top="106"/>
+            <TextBox Height="28" Text="ID Back Printer" Canvas.Top="127" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="692" Canvas.Top="135"/>
+            <TextBox Height="28" Text="H Detector" Canvas.Top="156" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="692" Canvas.Top="164"/>
+            <TextBox Height="28" Text="Jambo roll" Canvas.Top="185" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Vacuum table" Canvas.Top="214" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Sheet colector" Canvas.Top="243" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="One site repair kit" Canvas.Top="272" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="692" Canvas.Top="279"/>
+            <TextBox Height="28" Text="Installation kit" Canvas.Top="301" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="692" Canvas.Top="309"/>
+            <TextBox Height="28" Text="Slitter" Canvas.Top="330" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Media disc kit" Canvas.Top="388" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="692" Canvas.Top="396"/>
+            <TextBox Height="28" Text="Balance weights" Canvas.Top="417" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Spreaders kit" Canvas.Top="447" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="692" Canvas.Top="454"/>
+            <TextBox Height="28" Text="Waste" Canvas.Top="476" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <ComboBox Canvas.Left="648" Canvas.Top="216" Width="58" FontSize="15" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
+                <ComboBoxItem Content="          " HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="3x2" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="4x8" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="5x10" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+            </ComboBox>
+            <TextBox x:Name="box_Copy13" Height="23"  Canvas.Top="332" Width="58" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="648" MaxLines="1" MaxLength="2" HorizontalContentAlignment="Center" ToolTip="Enter quantity" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="682" Canvas.Top="417" FlowDirection="RightToLeft" FontWeight="Bold" Content="T"/>
+            <CheckBox Canvas.Left="682" Canvas.Top="430" FlowDirection="RightToLeft" FontWeight="Bold" Content="Y"/>
+            <CheckBox Content="Camera" Canvas.Left="626" Canvas.Top="72" FlowDirection="RightToLeft" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold"/>
+            <CheckBox Content="Back Lit" Canvas.Left="528" Canvas.Top="72" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold"/>
+            <ComboBox Canvas.Left="649" Canvas.Top="245" Width="57" FontSize="15" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
+                <ComboBoxItem Content="          " HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="x1" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="x2" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="x3" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+            </ComboBox>
+            <ComboBox Canvas.Left="648" Canvas.Top="187" Width="58" FontSize="15" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman" ToolTip="Enter Jambo roll Front or Rear">
+                <ComboBoxItem Content="          " HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="F" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" ToolTip="Front" />
+                <ComboBoxItem Content="R" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" ToolTip="Rear" />
+                <ComboBoxItem Content="FR" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" ToolTip="Front and Rear" />
+            </ComboBox>
+            <TextBox Height="28" Text="Plug Caldera" Canvas.Top="301" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="S/N Caldera" Canvas.Top="330" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy14" Height="23"  Canvas.Top="304" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy15" Height="23"  Canvas.Top="333" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Chiller" Canvas.Top="505" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="692" Canvas.Top="512"/>
+            <TextBox Height="28" Text="Orange cables" Canvas.Top="534" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="692" Canvas.Top="541"/>
+            <TextBox Height="28" Text="Media shaft 5.20m" Canvas.Top="127" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="338" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="506" Canvas.Top="134"/>
+            <ComboBox Canvas.Left="644" Canvas.Top="478" Width="62" FontSize="15" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
+                <ComboBoxItem Content="Big" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="Small" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+            </ComboBox>
+            <TextBox Height="28" Text="Arm system" Canvas.Top="98" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="338" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="506" Canvas.Top="106"/>
+            <TextBox Height="28" Text="Slitter double" Canvas.Top="359" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="524" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy16" Height="23"  Canvas.Top="361" Width="58" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="648" MaxLines="1" MaxLength="2" HorizontalContentAlignment="Center" ToolTip="Enter quantity" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Ink" Canvas.Top="156" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="338" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <ComboBox Canvas.Left="390" Canvas.Top="158" Width="130" FontSize="18" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
+                <ComboBoxItem Content="Without" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="CMYK" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="CMYK W" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="CMYK Lt" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="CMYK Lt W" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+            </ComboBox>
+            <TextBox Height="28" Text="X motor support" Canvas.Top="185" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="338" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="506" Canvas.Top="192"/>
+            <TextBox Height="28" Text="Photo interrupter" Canvas.Top="214" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="338" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <CheckBox Canvas.Left="506" Canvas.Top="221"/>
+            <TextBox Height="28" Text="Heads plate" Canvas.Top="243" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="338" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <ComboBox Canvas.Left="447" Canvas.Top="245" Width="73" FontSize="18" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
+                <ComboBoxItem Content="New" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="Old" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+            </ComboBox>
+            <TextBox Height="28" Text="PCI ᶙc" Canvas.Top="447" Width="311" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="20" >
+                <TextBox.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFB3E1F1"/>
+                        <GradientStop Color="#FFE3EEF1" Offset="0.238"/>
+                    </LinearGradientBrush>
+                </TextBox.Background>
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy9" Height="23"  Canvas.Top="450" Width="147" FontSize="18" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="180" MaxLines="1" MaxLength="8" HorizontalContentAlignment="Center" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox Height="28" Text="Memory" Canvas.Top="272" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="338" >
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <ComboBox Canvas.Left="447" Canvas.Top="274" Width="73" FontSize="18" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
+                <ComboBoxItem Content="HDD" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="SSD" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+            </ComboBox>
+            <TextBox Height="28" Text="Puls" Canvas.Top="302" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="338" ToolTip="Select version of puls wave&#10;for example:&#10;Wave-T2 v2 -2">
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+            <TextBox x:Name="box_Copy17" Height="23"  Canvas.Top="304" Width="141" FontSize="13" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Fixed" Canvas.Left="380" MaxLines="1" MaxLength="20" HorizontalContentAlignment="Center" ToolTip="Select version of puls wave&#10;for example:&#10;Wave-T2 v2 -2">
+                <TextBox.BorderBrush>
+                    <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
+                        <GradientStop Color="#FFABADB3" Offset="0.05"/>
+                        <GradientStop Color="#FFE2E3EA" Offset="0.07"/>
+                        <GradientStop Color="#FF011D3A" Offset="1"/>
+                    </LinearGradientBrush>
+                </TextBox.BorderBrush>
+            </TextBox>
+        </Canvas>
+        <Button Content="Save to PDF" Margin="811,0,35,28" Click="Button_Click" Height="30" VerticalAlignment="Bottom" AutomationProperties.HelpText="Save to PDF" BorderBrush="#FF124606">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                    <GradientStop Color="#FF3BB6BB" Offset="0.9"/>
+                    <GradientStop Color="#FFDDDDDD" Offset="0.157"/>
+                    <GradientStop Color="#FF2CD1AB" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>
