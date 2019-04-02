@@ -692,7 +692,7 @@
                     </LinearGradientBrush>
                 </TextBox.BorderBrush>
             </TextBox>
-            <TextBox Height="28" Text="Air Shaft" Canvas.Top="331" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="338" >
+            <TextBox Height="56" Text="" Canvas.Top="331" Width="185" FontSize="20" FontFamily="Times New Roman" FontWeight="Bold" TextOptions.TextHintingMode="Auto" IsReadOnly="True" MaxLines="1" Canvas.Left="338" >
                 <TextBox.BorderBrush>
                     <LinearGradientBrush EndPoint="0,20" MappingMode="Absolute" StartPoint="0,0">
                         <GradientStop Color="#FFABADB3" Offset="0.05"/>
@@ -701,21 +701,20 @@
                     </LinearGradientBrush>
                 </TextBox.BorderBrush>
             </TextBox>
-            <ComboBox Canvas.Left="488" Canvas.Top="333" Width="33" FontSize="15" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
+            <ComboBox Canvas.Left="482" Canvas.Top="361" Width="38" FontSize="15" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
                 <ComboBoxItem Content="          " HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
-                <ComboBoxItem Content="1" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
-                <ComboBoxItem Content="2" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
-                <ComboBoxItem Content="3" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="x1" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="x2" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="x3" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
             </ComboBox>
-            <ComboBox Canvas.Left="424" Canvas.Top="333" Width="33" FontSize="15" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
+            <ComboBox Canvas.Left="482" Canvas.Top="333" Width="38" FontSize="15" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
                 <ComboBoxItem Content="          " HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
-                <ComboBoxItem Content="1" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
-                <ComboBoxItem Content="2" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
-                <ComboBoxItem Content="3" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="x1" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="x2" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
+                <ComboBoxItem Content="x3" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
             </ComboBox>
-            <Label Content="F" Canvas.Left="454" Canvas.Top="330" FontSize="18" FontWeight="Bold" FontFamily="Times New Roman" Width="23"/>
-            <Label Content="R" Canvas.Left="470" Canvas.Top="330" FontSize="18" FontWeight="Bold" FontFamily="Times New Roman"/>
-            <Label Content="|" Canvas.Left="465" Canvas.Top="323" FontSize="25" FontWeight="Bold" FontFamily="Times New Roman"/>
+            <Label Content="Air shaft Front" Canvas.Left="338" Canvas.Top="330" FontSize="20" FontWeight="Bold" FontFamily="Times New Roman" Width="139"/>
+            <Label Content="Air shaft Rear" Canvas.Left="338" Canvas.Top="356" FontSize="20" FontWeight="Bold" FontFamily="Times New Roman" Width="139"/>
         </Canvas>
         <Button Content="Save to PDF" Margin="811,0,35,28" Click="Button_Click" Height="30" VerticalAlignment="Bottom" AutomationProperties.HelpText="Save to PDF" BorderBrush="#FF124606">
             <Button.Background>
