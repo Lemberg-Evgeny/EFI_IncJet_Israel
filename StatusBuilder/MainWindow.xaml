@@ -701,13 +701,13 @@
                     </LinearGradientBrush>
                 </TextBox.BorderBrush>
             </TextBox>
-            <ComboBox Canvas.Left="482" Canvas.Top="361" Width="38" FontSize="15" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
+            <ComboBox Canvas.Left="477" Canvas.Top="361" Width="43" FontSize="15" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
                 <ComboBoxItem Content="          " HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
                 <ComboBoxItem Content="x1" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
                 <ComboBoxItem Content="x2" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
                 <ComboBoxItem Content="x3" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
             </ComboBox>
-            <ComboBox Canvas.Left="482" Canvas.Top="333" Width="38" FontSize="15" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
+            <ComboBox Canvas.Left="477" Canvas.Top="333" Width="43" FontSize="15" FontWeight="Bold" Height="23" HorizontalContentAlignment="Center" FontFamily="Times New Roman">
                 <ComboBoxItem Content="          " HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
                 <ComboBoxItem Content="x1" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
                 <ComboBoxItem Content="x2" HorizontalAlignment="Center" HorizontalContentAlignment="Center" FontSize="18" />
